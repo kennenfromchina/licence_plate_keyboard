@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - licence_plate_keyboard (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - licence_plate_keyboard (from `.symlinks/plugins/licence_plate_keyboard/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  licence_plate_keyboard:
+    :path: ".symlinks/plugins/licence_plate_keyboard/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  licence_plate_keyboard: d99cc0470219a8ec44d617b7b054514d5f60d9a2
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.2
