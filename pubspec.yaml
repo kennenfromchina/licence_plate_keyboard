@@ -1,6 +1,6 @@
 name: licence_plate_keyboard
 description: A Chinese licence plate keyboard with cool_ui.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/kennenfromchina/licence_plate_keyboard.git
 
 environment:

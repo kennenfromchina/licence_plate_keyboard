@@ -29,7 +29,9 @@ class LicencePlateKeyboard extends StatelessWidget {
     if (bottomPadding == null) {
       bottomPadding = MediaQuery.of(context).padding.bottom;
     }
-    return _buttonHeight * _rowLength + (bottomPadding ?? 0);
+    return _buttonHeight * _rowLength +
+        (bottomPadding ?? 0) +
+        _completeButtonHeight;
   }
 
   static double? bottomPadding;
@@ -234,6 +236,24 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
       rows.add(Row(children: rowChildren));
     }
 
+    /// add complete button
+    rows.add(
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ConstrainedBox(
+            constraints: BoxConstraints.tightFor(
+                height: _completeButtonHeight,
+                width: MediaQuery.of(context).size.width),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: ElevatedButton(onPressed: hideKeyBoard, child: Text("完成")),
+            ),
+          ),
+        ],
+      ),
+    );
+
     return SingleChildScrollView(
       physics: NeverScrollableScrollPhysics(),
       child: Column(
@@ -256,9 +276,19 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
     widget.controller.clear();
     setState(() {});
   }
+
+  /// 全局收键盘
+  void hideKeyBoard() {
+    FocusScopeNode currentFocus = FocusScope.of(context);
+    if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+      FocusManager.instance.primaryFocus?.unfocus();
+    }
+  }
 }
 
 const double _buttonHeight = 48.0;
+
+const double _completeButtonHeight = _buttonHeight - 16.0;
 
 const int _rowLength = 5;
 
