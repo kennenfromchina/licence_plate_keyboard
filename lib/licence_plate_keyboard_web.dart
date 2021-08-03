@@ -1,4 +1,5 @@
 import 'dart:async';
+
 // In order to *not* need this ignore, consider extracting the "web" version
 // of your plugin as a separate package, instead of inlining it in the same
 // package as the core of your plugin.
@@ -31,7 +32,8 @@ class LicencePlateKeyboardWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'licence_plate_keyboard for web doesn\'t implement \'${call.method}\'',
+          details:
+              'licence_plate_keyboard for web doesn\'t implement \'${call.method}\'',
         );
     }
   }

@@ -1,5 +1,5 @@
 name: licence_plate_keyboard
-description: A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if you have and question with this plugin, please contact me at this email kennenfromchina@163.com
+description: A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if you have and question with this plugin, please report issues in this repository
 version: 0.0.4
 homepage: https://github.com/kennenfromchina/licence_plate_keyboard.git
 
