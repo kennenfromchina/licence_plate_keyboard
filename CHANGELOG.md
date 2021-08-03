@@ -1,7 +1,11 @@
 ## 0.0.1
 
-* 初始化
+* init code
 
 ## 0.0.2
 
-* 添加完成按钮收键盘
+* add complete button to hide keyboard
+
+## 0.0.3
+
+* add web support

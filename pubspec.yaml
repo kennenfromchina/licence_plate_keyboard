@@ -1,6 +1,6 @@
 name: licence_plate_keyboard
-description: A Chinese licence plate keyboard with cool_ui.
-version: 0.0.2
+description: A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if you have and question with this plugin, please contact me at this email kennenfromchina@163.com
+version: 0.0.3
 homepage: https://github.com/kennenfromchina/licence_plate_keyboard.git
 
 environment:
@@ -9,6 +9,8 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_web_plugins:
     sdk: flutter
   cool_ui: ^1.0.2
 
@@ -32,6 +34,9 @@ flutter:
         pluginClass: LicencePlateKeyboardPlugin
       ios:
         pluginClass: LicencePlateKeyboardPlugin
+      web:
+        pluginClass: LicencePlateKeyboardWeb
+        fileName: licence_plate_keyboard_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
