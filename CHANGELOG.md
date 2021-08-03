@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * add web support
+
+## 0.0.4
+
+* add linux, macos, windows support
