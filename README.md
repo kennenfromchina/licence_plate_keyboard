@@ -1,6 +1,6 @@
 # licence_plate_keyboard
 
-A Chinese licence plate keyboard with cool_ui.
+A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if you have any question with this plugin, please report issues in this repository
 
 ## Getting Started
 
