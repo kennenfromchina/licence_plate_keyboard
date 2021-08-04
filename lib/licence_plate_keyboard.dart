@@ -25,6 +25,8 @@ class LicencePlateKeyboard extends StatelessWidget {
   static const CKTextInputType inputType =
       const CKTextInputType(name: "LicencePlateKeyboard");
 
+  static double? bottomPadding;
+
   static double getHeight(BuildContext context) {
     if (bottomPadding == null) {
       bottomPadding = MediaQuery.of(context).padding.bottom;
@@ -34,11 +36,27 @@ class LicencePlateKeyboard extends StatelessWidget {
         _completeButtonHeight;
   }
 
-  static double? bottomPadding;
+  /// MARK: 提供外部修改方法
+
+  static List<String> get originProvinceList => _provinceList;
+
+  static List<String> get originLetterAndDigitalList => _letterAndDigitalList;
+
+  /// 更改数据源
+  static void updateDataSource({
+    List<String>? provinceList,
+    List<String>? letterAndDigitalList,
+  }) {
+    inputProvinceList = provinceList;
+    inputLetterAndDigitalList = letterAndDigitalList;
+  }
+
+  static List<String>? inputProvinceList;
+  static List<String>? inputLetterAndDigitalList;
 
   final KeyboardController controller;
 
-  const LicencePlateKeyboard({
+  LicencePlateKeyboard({
     required this.controller,
   });
 
@@ -67,6 +85,8 @@ class LicencePlateKeyboard extends StatelessWidget {
       type: controller.text.length < 1
           ? _LicencePlateKeyboardType.province
           : _LicencePlateKeyboardType.letterAndDigital,
+      provinceList: inputProvinceList ?? _provinceList,
+      letterAndDigitalList: inputLetterAndDigitalList ?? _letterAndDigitalList,
     );
   }
 }
@@ -75,10 +95,15 @@ class LicencePlateKeyboardInput extends StatefulWidget {
   final KeyboardController controller;
   final _LicencePlateKeyboardType type;
 
+  final List<String> provinceList;
+  final List<String> letterAndDigitalList;
+
   const LicencePlateKeyboardInput({
     Key? key,
     required this.controller,
     required this.type,
+    this.provinceList = _provinceList,
+    this.letterAndDigitalList = _letterAndDigitalList,
   }) : super(key: key);
 
   @override
@@ -116,11 +141,18 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
     );
   }
 
+  /// 是否为原始数据（原始数据对应特殊index需要跳过）
+  bool get originData =>
+      (type == _LicencePlateKeyboardType.province &&
+          widget.provinceList == _provinceList) ||
+      (type == _LicencePlateKeyboardType.letterAndDigital &&
+          widget.letterAndDigitalList == _letterAndDigitalList);
+
   Widget _buildKeyboard() {
     /// 数据数组
     List<String> buttonTitleList = type == _LicencePlateKeyboardType.province
-        ? _provinceList
-        : _letterAndDigitalList;
+        ? widget.provinceList
+        : widget.letterAndDigitalList;
 
     /// 控件数组
     List<Widget> buttonList = [];
@@ -224,8 +256,9 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
     for (int i = 0; i < _rowLength; i++) {
       List<Widget> rowChildren = [];
       for (int j = 0; j < _rowCount; j++) {
-        /// ignore space button
-        if (i == _spaceRowIndex && j > _spaceRowCountMax) continue;
+        /// ignore space button if originData
+        if (originData && i == _spaceRowIndex && j > _spaceRowCountMax)
+          continue;
 
         /// add every button of this row
         int index = i * 10 + j;

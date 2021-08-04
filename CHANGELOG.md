@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * add linux, macos, windows support
+
+## 0.0.5
+
+* add config data source method
