@@ -312,10 +312,7 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
 
   /// 全局收键盘
   void hideKeyBoard() {
-    FocusScopeNode currentFocus = FocusScope.of(context);
-    if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
-      FocusManager.instance.primaryFocus?.unfocus();
-    }
+    widget.controller.doneAction();
   }
 }
 
