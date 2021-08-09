@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * complete button function bug fix
+
+## 0.0.7
+
+* add OC project support
