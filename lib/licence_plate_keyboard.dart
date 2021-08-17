@@ -262,7 +262,11 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
 
         /// add every button of this row
         int index = i * 10 + j;
-        rowChildren.add(buttonList[index]);
+
+        /// fix out of range bug
+        if (index < buttonList.length) {
+          rowChildren.add(buttonList[index]);
+        }
       }
 
       /// add row widget for rows
