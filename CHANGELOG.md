@@ -33,3 +33,7 @@
 ## 0.0.9
 
 * fix out of range bug
+
+## 0.0.10
+
+* bug fix
