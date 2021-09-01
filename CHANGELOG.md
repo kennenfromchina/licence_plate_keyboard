@@ -37,3 +37,7 @@
 ## 0.0.10
 
 * bug fix
+
+## 0.0.11
+
+* complete button bug fix

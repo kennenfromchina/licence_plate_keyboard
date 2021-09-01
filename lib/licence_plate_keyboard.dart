@@ -133,11 +133,19 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
-      height: LicencePlateKeyboard.getHeight(context),
-      alignment: Alignment.bottomCenter,
-      child: _buildKeyboard(),
+    /// 解决部分手机获取安全区不正确的问题，在构建的时候判断如果不等则重新赋值
+    double bottomPadding = MediaQuery.of(context).padding.bottom;
+    if (LicencePlateKeyboard.bottomPadding != bottomPadding) {
+      LicencePlateKeyboard.bottomPadding = bottomPadding;
+    }
+    return Material(
+      color: Colors.white,
+      child: Container(
+        margin: EdgeInsets.only(bottom: bottomPadding),
+        height: LicencePlateKeyboard.getHeight(context),
+        alignment: Alignment.bottomCenter,
+        child: _buildKeyboard(),
+      ),
     );
   }
 
