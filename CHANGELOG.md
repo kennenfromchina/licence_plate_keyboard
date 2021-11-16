@@ -41,3 +41,7 @@
 ## 0.0.11
 
 * complete button bug fix
+
+## 0.1.0
+
+* support flutter 2.5.0

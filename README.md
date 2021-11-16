@@ -4,6 +4,31 @@ A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if 
 
 ## Getting Started
 
+Change your pubspec.yaml below
+
+Flutter >= 2.5
+
+`
+dependencies:
+  licence_plate_keyboard: ^0.1.0
+`
+
+Flutter >= 2.0
+
+`
+dependencies:
+  licence_plate_keyboard: ^0.0.11
+`
+
+If your flutter version >= 2.5, please change your main.dart
+
+`
+void main() {
+  // runApp(MyApp()); // old
+  runMockApp(KeyboardRootWidget(child: MyApp())); // new
+}
+`
+
 This project is a starting point for a Flutter
 [plug-in package](https://flutter.dev/developing-packages/),
 a specialized package that includes platform-specific implementation code for

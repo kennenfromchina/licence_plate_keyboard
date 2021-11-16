@@ -5,7 +5,7 @@ import 'package:licence_plate_keyboard_example/custom_keyboard.dart';
 
 void main() {
   LicencePlateKeyboard.register();
-  runApp(KeyboardRootWidget(child: MyApp()));
+  runMockApp(KeyboardRootWidget(child: MyApp())); // 新的
 }
 
 class MyApp extends StatelessWidget {
