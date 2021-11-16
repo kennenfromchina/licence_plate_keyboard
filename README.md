@@ -8,26 +8,26 @@ Change your pubspec.yaml below
 
 Flutter >= 2.5
 
-`yaml
+``` yaml
 dependencies:
   licence_plate_keyboard: ^0.1.0
-`
+```
 
 Flutter >= 2.0
 
-`yaml
+``` yaml
 dependencies:
   licence_plate_keyboard: ^0.0.11
-`
+```
 
 If your flutter version >= 2.5, please change your main.dart
 
-`dart
+``` dart
 void main() {
   // runApp(MyApp()); // old
   runMockApp(KeyboardRootWidget(child: MyApp())); // new
 }
-`
+```
 
 This project is a starting point for a Flutter
 [plug-in package](https://flutter.dev/developing-packages/),
