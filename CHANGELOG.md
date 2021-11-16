@@ -45,3 +45,7 @@
 ## 0.1.0
 
 * support flutter 2.5.0
+
+## 0.1.1
+
+* update readme.md
