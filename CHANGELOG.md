@@ -49,3 +49,7 @@
 ## 0.1.1
 
 * update readme.md
+
+## 0.2.0
+
+* support flutter 3.0

@@ -6,6 +6,13 @@ A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if 
 
 Change your pubspec.yaml below
 
+Flutter >= 3.0
+
+``` yaml
+dependencies:
+  licence_plate_keyboard: ^0.2.0
+```
+
 Flutter >= 2.5
 
 ``` yaml
