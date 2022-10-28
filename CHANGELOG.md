@@ -57,3 +57,7 @@
 ## 0.3.0
 
 * support flutter 3.3.0, add Haptic Feedback
+
+## 0.3.1
+
+* update readme.md
