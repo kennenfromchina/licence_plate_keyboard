@@ -1,16 +1,6 @@
-///
-/// PROJECT_NAM: licence_plate_keyboard
-/// PACKAGE_NAME:
-/// NAME: licence_plate_keyboard
-/// Describe:
-///
-/// Created by kennen on 2021/8/2.
-/// Copyright (c) 2021 Zhilun (Hangzhou) Technology Co., Ltd. All rights reserved.
-///
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cool_ui/cool_ui.dart';
+import 'package:flutter/services.dart';
 
 /// 车牌号键盘输入类型
 enum _LicencePlateKeyboardType {
@@ -308,22 +298,26 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
   }
 
   void _onButtonClick(String title) {
+    HapticFeedback.mediumImpact();
     widget.controller.addText(title);
     setState(() {});
   }
 
   void _onDelete() {
+    HapticFeedback.mediumImpact();
     widget.controller.deleteOne();
     setState(() {});
   }
 
   void _onDeleteAll() {
+    HapticFeedback.vibrate();
     widget.controller.clear();
     setState(() {});
   }
 
   /// 全局收键盘
   void hideKeyBoard() {
+    HapticFeedback.mediumImpact();
     widget.controller.doneAction();
   }
 }
