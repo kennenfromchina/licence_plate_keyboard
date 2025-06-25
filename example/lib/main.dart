@@ -62,10 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("CustomKeyboardEvent"),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => CustomKeyboardDemo()));
+                    builder: (context) => CustomKeyboardDemo(),),);
               },
             ),
           ],
-        ));
+        ),);
   }
 }

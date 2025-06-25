@@ -1,10 +1,10 @@
 name: licence_plate_keyboard
 description: A Chinese licence plate keyboard with cool_ui, support iOS, Android and Web, if you have any question with this plugin, please report issues in this repository
-version: 0.3.1
+version: 0.4.0
 homepage: https://github.com/kennenfromchina/licence_plate_keyboard.git
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
 
 dependencies:

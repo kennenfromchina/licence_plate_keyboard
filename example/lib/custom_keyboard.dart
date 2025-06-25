@@ -52,10 +52,10 @@ class CustomKeyboardDemoState extends State<CustomKeyboardDemo> {
               TextField(
                 decoration: InputDecoration(labelText: '车牌输入键盘'),
                 keyboardType: LicencePlateKeyboard.inputType,
-              )
+              ),
             ],
-          ));
-    }));
+          ),);
+    },),);
   }
 
   static Future<String?> showInputDialogs(
@@ -63,7 +63,7 @@ class CustomKeyboardDemoState extends State<CustomKeyboardDemo> {
       Widget? titleWidget,
       Widget? messageWidget,
       List<TextInputFormatter>? inputFormatters,
-      TextInputType keyboardType = TextInputType.number}) {
+      TextInputType keyboardType = TextInputType.number,}) {
     String? value;
     return showCupertinoDialog<String>(
         context: context,
@@ -100,9 +100,9 @@ class CustomKeyboardDemoState extends State<CustomKeyboardDemo> {
                         onChanged: (newValue) {
                           value = newValue;
                         },
-                      )
+                      ),
                     ],
-                  )))));
+                  ),),),),);
           return CupertinoAlertDialog(
             title: titleWidget,
             content: Column(
@@ -118,9 +118,9 @@ class CustomKeyboardDemoState extends State<CustomKeyboardDemo> {
                 onPressed: () {
                   Navigator.of(context).pop(value ?? '');
                 },
-              )
+              ),
             ],
           );
-        });
+        },);
   }
 }

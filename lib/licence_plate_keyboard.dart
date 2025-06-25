@@ -44,6 +44,15 @@ class LicencePlateKeyboard extends StatelessWidget {
   static List<String>? inputProvinceList;
   static List<String>? inputLetterAndDigitalList;
 
+  /// 完成按钮样式配置
+  static ButtonStyle? completeButtonStyle;
+
+  static void updateCompleteButtonStyle({
+    ButtonStyle? completeButtonStyle,
+  }) {
+    LicencePlateKeyboard.completeButtonStyle = completeButtonStyle;
+  }
+
   final KeyboardController controller;
 
   LicencePlateKeyboard({
@@ -159,11 +168,13 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
     for (String buttonTitle in buttonTitleList) {
       if (buttonTitle.isEmpty) {
         /// 空白按钮
-        buttonList.add(Container(
-          color: Color(0xFFF2F2F2),
-          width: MediaQuery.of(context).size.width / 10.0,
-          height: _buttonHeight,
-        ));
+        buttonList.add(
+          Container(
+            color: Color(0xFFF2F2F2),
+            width: MediaQuery.of(context).size.width / 10.0,
+            height: _buttonHeight,
+          ),
+        );
       } else {
         /// 其他按钮
         buttonList.add(
@@ -278,11 +289,19 @@ class _LicencePlateKeyboardInputState extends State<LicencePlateKeyboardInput> {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints.tightFor(
-                height: _completeButtonHeight,
-                width: MediaQuery.of(context).size.width),
+              height: _completeButtonHeight,
+              width: MediaQuery.of(context).size.width,
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: ElevatedButton(onPressed: hideKeyBoard, child: Text("完成")),
+              child: ElevatedButton(
+                onPressed: hideKeyBoard,
+                child: Text("完成"),
+                style: LicencePlateKeyboard.completeButtonStyle ?? ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF2483F9),
+                  foregroundColor: Color(0xFFFFFFFF),
+                ),
+              ),
             ),
           ),
         ],

@@ -1,0 +1,12 @@
+# include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    unnecessary_getters_setters: false
+    constant_identifier_names: false
+    # 新增尾部逗号, 这样格式化代码好看
+    # https://docs.flutter.dev/tools/formatting
+    require_trailing_commas: true
+analyzer:
+  # todo暂时忽略，不想看警告
+  errors:
+    todo: ignore
