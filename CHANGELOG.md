@@ -61,3 +61,7 @@
 ## 0.3.1
 
 * update readme.md
+
+## 0.4.0
+
+* support flutter 3.19.3
